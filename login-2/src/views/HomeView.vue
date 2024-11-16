@@ -1,15 +1,67 @@
 <template>
-  <hello-world />
+  <v-container>
+    <v-row align="center" justify="center">
+      <v-col cols="12" sm="10">
+        <v-card class="elevaton-6 mt-10">
+          <v-window v-model="step">
+            <v-window-item :value="1">
+              <v-row>
+                <v-col cols="12" sm="6">
+                  <v-card-text class="mt-12">
+                    <h4 class="text-center">Login into Your Account</h4>
+                    <h6 class="text-center" grey--text>
+                      Log in to your account so you can continue building
+                      <br />and editing your onboarding flows
+                    </h6>
+                    <v-row align="center" justify="center">
+                      <v-col cols="12" sm="8">
+                        <v-text-field
+                          label="Email"
+                          outlined
+                          dense
+                          color="blue"
+                          autocomplete="false"
+                          class="mt-16"
+                        ></v-text-field>
+                        <v-text-field
+                          label="Password"
+                          outlined
+                          dense
+                          color="blue"
+                          autocomplete="false"
+                          type="password"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-card-text>
+                </v-col>
+                <v-col cols="12" sm="6"></v-col>
+              </v-row>
+            </v-window-item>
+          </v-window>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
-
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
+export default {
+  data: () => ({
+    step: 1,
+  }),
+  props: {
+    source: String,
+  },
+};
 </script>
+
+<style scoped>
+.v-application .rounded-bl-xl {
+  border-bottom-left-radius: 300px !important;
+}
+
+.v-application .rounded-br-xl {
+  border-bottom-right-radius: 300px !important;
+}
+</style>
